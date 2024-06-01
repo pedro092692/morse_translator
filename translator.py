@@ -54,6 +54,7 @@ class Translator:
         string = self.clean_str()
         morse_code = [self.morse_code[character] for character in string if character in list(self.morse_code.keys())]
         morse_string = ' '.join(morse_code)
-
+        if len(morse_string) < 1:
+            morse_string = 'Error in input. Cannot translate'
         return morse_string
 
